@@ -20,6 +20,14 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# Ensure the DATABASE_URL is correctly set and parsed
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
+if isinstance(DATABASE_URL, bytes):
+    DATABASE_URL = DATABASE_URL.decode('utf-8')
+
+DATABASES = {
+    'default': dj_database_url.parse(DATABASE_URL)
+}
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -86,7 +94,7 @@ WSGI_APPLICATION = 'spitting_bars.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL", ""))
 }
 
 # Password validation
