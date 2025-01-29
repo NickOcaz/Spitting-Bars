@@ -56,10 +56,10 @@ test
 
 The wireframes were created using Balsamiq
 Homepage (unregistered users):
-![alt text](readme_docs/readme_images/Homepage.png)
+![alt text](readme_images/Homepage.png)
 
 Homepage Registered Logged In Users:
-![alt text](<readme_docs/readme_images/User Homepage.png>)
+![alt text](<readme_images/User Homepage.png>)
 
 Community Page:
-![alt text](<readme_docs/readme_images/View Other Raps.png>)
+![alt text](<readme_images/View Other Raps.png>)
