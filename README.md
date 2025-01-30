@@ -211,3 +211,99 @@ Community Page:
 ```
 Realtionship
 One-to-Many: Each user can have multiple lyrics, but each piece of lyrics belongs to one user. This is represented by the foreign key author_id in the Lyrics table.
+
+
+## Deployment
+
+* Connecting to GitHub
+
+Repository initially created on GitHub, Here's how
+
+1. Sign in to GitHub First, go to GitHub and log in to your account. If you don't have an account, you'll need to sign up.
+
+2. Create a New Repository Once you're logged in, click the + icon in the top-right corner of the page, and select New repository.
+
+You’ll be taken to the Create a new repository page.
+
+3. Set Up the Repository Repository name: Choose a name for your repository.
+
+Description (optional): You can add a brief description of your project.
+
+Public or Private: Select whether you want the repository to be public (visible to everyone) or private (only you and selected collaborators can see it). This project is set to public
+
+Initialize this repository with a README: (2) It's often a good idea to check this box. It will create a README.md file in your repository, which you can edit to describe your project.
+
+Now Create repository (3).
+
+
+![GitHub Deployment Step 1](readme_docs/readme_images/git-deply1.png)
+
+4. Open the GitHub Repository Navigate to your GitHub repository in your web browser and copy the link for your repository.
+
+![GitHub Deployment Step 4](readme_docs/readme_images/git-deply4.png)
+
+5. Launch Gitpod and select New Workspace
+
+![GitHub Deployment Step 2](readme_docs/readme_images/git-deply2.png)
+
+6. Here you can paste the url to the repositry and select your chosen editor.
+
+![GitHub Deployment Step 3](readme_docs/readme_images/git-deply3.png)
+
+7. Now that the repo is open in our editor any addition to the code are submitted to the repo in the terminal with the commands
+
+git add . git commit -m "Initial commit" (details of commit)
+
+git push
+
+8. Each team member created their own branch to work on, which was later merged with the main branch to avoid conflicts.
+
+### Creating a Branch from Main
+
+To create a new branch from the main branch, follow these steps:
+
+1. Open your terminal or command prompt.
+2. Navigate to your project directory.
+3. Ensure you are on the main branch by running:
+  ```bash
+  git checkout main
+  ```
+4. Create a new branch with a descriptive name:
+  ```bash
+  git checkout -b new-branch-name
+  ```
+5. Your new branch is now created, and you can start making changes without affecting the main branch.
+
+* Heroku Deployment
+
+1. Create a New App on Heroku:
+
+* Go to Heroku and log in.
+* Click the "New" button in the top right corner and select "Create new app".
+* Enter a unique name for your app and choose your region.
+* Click "Create app".
+
+![Heroku Deployment Step 1](readme_docs/readme_images/horoku-deply1.png)
+
+2. In settings Connect to GitHub repo, search can be used to ensure your Heroku is connected to GitHub:
+
+![Heroku Deployment Step 2](readme_docs/readme_images/horoku-deply2.png)
+
+
+3. In settings, set config vars to replicate what is in env.py, secret key and database_url-
+
+![Heroku Deployment Step 3](readme_docs/readme_images/horoku-deply3.png)
+
+4. Manual deploy on heroku - heroku-deploy.png
+
+![Heroku Deployment Step 4](readme_docs/readme_images/horoku-deply4.png)
+
+## Credits
+
+* Code
+
+* Media
+
+* Additional Reading/Tutorials/Books/Blogs
+
+* Acknowledgements
