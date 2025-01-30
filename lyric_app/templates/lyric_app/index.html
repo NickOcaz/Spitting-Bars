@@ -1,74 +1,100 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
-<!--not in use feel free to modify by Jeff-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spitting Bars</title>
+    <!-- Bootstrap Link-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts Link-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS Link-->
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg px-3">
+      <a class="navbar-brand me-auto" href="#">Spitting Bars</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">My Raps</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Community Raps</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+        </ul>
+      </div>
+    </nav>
 
-<!-- index.html content starts here -->
-<div class="container">
-    <div class="row">
-        <!-- Placeholder card for creating a new genre  -->
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="image-container">
-                        <!-- <div class="image-flash">
-                            <p class="artist">Artist: none</p>
-                        </div> -->
-                    </div>
-                    <a href="{% url 'genre_create' %}" class="genre-link faded">
-                        <h2 class="card-title">Create Genre</h2>
-                        <p class="card-text">Genre excerpt</p>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <!-- Hero Section -->
+    <header class="container-fluid text-center my-5">
+      <img src="your-image.jpg" class="img-fluid" alt="Hero Image" />
+      <h1 class="mt-4">Express Yourself Through Words</h1>
+      <p>Join the community and start creating your own raps today!</p>
+      <a href="#" class="btn btn-primary btn-lg">Register Now</a>
+    </header>
 
-        <!-- Iterate over the lesson_list to display existing lessons -->
-        {% if user.is_authenticated %}
-        {% for genre in genre_list %}
+    <!-- Features Section -->
+    <div class="container my-5">
+      <div class="row text-center">
         <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="image-container">
-                        {% if "placeholder" in genre.featured_image.url %}
-                        <img class="card-img-top" src="{% static '/images/AmazingTutors.jpg' %}" alt="placeholder image">
-                        {% else %}
-                        <img class="card-img-top" src=" {{ genre.featured_image.url }}" alt="{{ genre.name }}">
-                        {% endif %}
-                        <!-- <div class="image-flash">
-                            <p class="author">Tutor: {{ lesson.author }}</p>
-                        </div> -->
-                    </div>
-                    <a href="{% url 'lyric_list' lesson.slug %}"
-                        class="lesson-link {% if lesson.status == 0 %}faded{% endif %}">
-                        <h2 class="card-title {% if lesson.status == 0 %}faded{% endif %}">{{ lesson.title }}</h2>
-                        <p class="card-text {% if lesson.status == 0 %}faded{% endif %}">{{ lesson.excerpt }}</p>
-                    </a>
-                    <p class="card-text text-muted h6">{{ lesson.created_on }}</p>
-                </div>
+          <div class="card">
+            <img src="your-image.jpg" class="card-img-top" alt="Create Raps" />
+            <div class="card-body">
+              <p class="card-text">
+                Start crafting your own lyrics and express your creativity.
+              </p>
+              <a href="#" class="btn">Create Your Own Raps</a>
             </div>
+          </div>
         </div>
-        {% endfor %}
-        {% endif %}
+        <div class="col-md-4">
+          <div class="card">
+            <img src="your-image.jpg" class="card-img-top" alt="View Raps" />
+            <div class="card-body">
+              <p class="card-text">
+                Explore raps from other artists in the community.
+              </p>
+              <a href="#" class="btn">View Other Raps</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="your-image.jpg" class="card-img-top" alt="Get Feedback" />
+            <div class="card-body">
+              <p class="card-text">
+                Share your lyrics and get feedback from the community.
+              </p>
+              <a href="#" class="btn">Get Feedback on Your Raps</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-{% if is_paginated %}
-<nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> &laquo; PREV</a></li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-        {% endif %}
 
-    </ul>
-</nav>
-{% endif %}
+    <!-- Footer Section -->
+    <footer class="text-center py-3">
+      <p>&copy; 2025 Spitting Bars. All rights reserved.</p>
+    </footer>
 
-
-<!-- index.html content ends here -->
-{% endblock %}
-{% block copyright %}
-AmazingTutors &copy; Copyright 2025
-{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
