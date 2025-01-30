@@ -32,7 +32,7 @@ def lyric_create(request):
             lyric = lyricform.save(commit=False)
             lyric.artist = request.user
             lyric.save()
-            messages.add_message(request, 'Lyric created successfully')
+            messages.success(request, 'Lyric created successfully')
             return redirect('home')
     lyricform = LyricForm()
     
