@@ -1,13 +1,16 @@
+{% extends "base.html" %}
 
 {% load i18n %}
-{% block content %}
 
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
+            <p>{% blocktrans %}Welcome back to the Spitting Bars. To create or view lyrics, please log in. If
                 you
                 have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
                 first.{% endblocktrans %}</p>
