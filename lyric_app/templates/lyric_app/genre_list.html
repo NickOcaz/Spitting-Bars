@@ -1,0 +1,76 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!--work in progress for concept about Genre list-->
+
+<!-- index.html content starts here -->
+<div class="container">
+    <div class="row">
+        <!-- Placeholder card for creating a new genre  -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                        <!-- <div class="image-flash">
+                            <p class="artist">Artist: none</p>
+                        </div> -->
+                    </div>
+                    <a href="{% url 'genre_create' %}" class="genre-link faded">
+                        <h2 class="card-title">Create Genre</h2>
+                        <p class="card-text">Genre excerpt</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Iterate over the lesson_list to display existing lessons -->
+        {% if user.is_authenticated %}
+        {% for genre in genre_list %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if "placeholder" in genre.featured_image.url %}
+                        <img class="card-img-top" src="{% static '/images/AmazingTutors.jpg' %}" alt="placeholder image">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ genre.featured_image.url }}" alt="{{ genre.name }}">
+                        {% endif %}
+                        <!-- <div class="image-flash">
+                            <p class="author">Tutor: {{ lesson.author }}</p>
+                        </div> -->
+                    </div>
+                    <a href="{% url 'lyric_list' lesson.slug %}"
+                        class="lesson-link {% if lesson.status == 0 %}faded{% endif %}">
+                        <h2 class="card-title {% if lesson.status == 0 %}faded{% endif %}">{{ lesson.title }}</h2>
+                        <p class="card-text {% if lesson.status == 0 %}faded{% endif %}">{{ lesson.excerpt }}</p>
+                    </a>
+                    <p class="card-text text-muted h6">{{ lesson.created_on }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> &laquo; PREV</a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        {% endif %}
+
+    </ul>
+</nav>
+{% endif %}
+
+
+<!-- index.html content ends here -->
+{% endblock %}
+{% block copyright %}
+AmazingTutors &copy; Copyright 2025
+{% endblock %}
+

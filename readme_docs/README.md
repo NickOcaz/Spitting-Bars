@@ -1,7 +1,11 @@
 # Spittin' Bars
 
 test
+<<<<<<< HEAD
 
+=======
+test by Jeff
+>>>>>>> main
 ## Table of Contents
 
 - [Introduction](#introduction)
