@@ -8,10 +8,12 @@
     <h2>Create Lyric</h2>
     <div class="mediaplay-section">
       {% block mediaplay %}
+        <p>Select Track:</p>
+       
         <select id="audioSelect">
-            <option value="{% static 'media/beat1.mp3' %}">Loop 1</option>
-            <option value="{% static 'media/beat2.mp3' %}">Loop 2</option>
-            <option value="{% static 'media/beat3.mp3' %}">Loop 3</option>
+            <option value="{% static 'media/beat1.mp3' %}">Midnight Stalker</option>
+            <option value="{% static 'media/beat2.mp3' %}">Nuthin But A</option>
+            <option value="{% static 'media/beat3.mp3' %}">Gimme Dat</option>
         </select>
         <button id="playButton">Play Audio</button>
         <button id="stopButton">Stop Audio</button>
