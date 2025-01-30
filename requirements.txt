@@ -4,4 +4,11 @@ Django==4.2.18
 gunicorn==20.1.0
 psycopg2==2.9.10
 sqlparse==0.5.3
+<<<<<<< HEAD
+<<<<<<< HEAD
 whitenoise==6.5.0
+=======
+>>>>>>> main
+=======
+whitenoise==6.5.0
+>>>>>>> bd4134bcc3dcb4b55b3a164314bf1a1d4e24c6e5

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+Spitting Bars
+=======
 # Spittin' Bars
 test
 ## Table of Contents
@@ -307,3 +310,4 @@ To create a new branch from the main branch, follow these steps:
 * Additional Reading/Tutorials/Books/Blogs
 
 * Acknowledgements
+>>>>>>> bd4134bcc3dcb4b55b3a164314bf1a1d4e24c6e5
