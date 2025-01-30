@@ -20,6 +20,7 @@ from lyric_app import views as lyric_views
 
 urlpatterns = [
     # path('', lyric_views.index, name='index'), 
+
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path("", include("lyric_app.urls"), name='lyric_app_urls'),
