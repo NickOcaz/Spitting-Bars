@@ -3,10 +3,57 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-
 {% block content %}
   <div class="container">
     <h2>Create Lyric</h2>
+    <div class="mediaplay-section">
+      {% block mediaplay %}
+        <select id="audioSelect">
+            <option value="{% static 'media/beat1.mp3' %}">Loop 1</option>
+            <option value="{% static 'media/beat2.mp3' %}">Loop 2</option>
+            <option value="{% static 'media/beat3.mp3' %}">Loop 3</option>
+        </select>
+        <button id="playButton">Play Audio</button>
+        <button id="stopButton">Stop Audio</button>
+        <script>
+          const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          let source;
+
+          document.getElementById('playButton').addEventListener('click', function() {
+              const audioFilePath = document.getElementById('audioSelect').value;
+
+              fetch(audioFilePath)
+                  .then(response => response.arrayBuffer())
+                  .then(buffer => audioCtx.decodeAudioData(buffer))
+                  .then(audioBuffer => {
+                      if (source) {
+                          source.stop();
+                      }
+                      source = audioCtx.createBufferSource();
+                      source.buffer = audioBuffer;
+                      source.loop = true;
+
+                      source.connect(audioCtx.destination);
+                      source.start(0);
+                  })
+                  .catch(error => console.error('Error fetching audio:', error));
+          });
+
+          document.getElementById('stopButton').addEventListener('click', function() {
+              if (source) {
+                  source.stop();
+              }
+          });
+
+          document.getElementById('audioSelect').addEventListener('change', function() {
+              if (source) {
+                  source.stop();
+              }
+          });
+        </script>
+      {% endblock %}
+    </div>
+    
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       {{ lyricform|crispy }}
