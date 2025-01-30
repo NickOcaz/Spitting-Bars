@@ -1,8 +1,36 @@
 body {
     background-color: rgb(2, 2, 34);
+    background: linear-gradient(45deg, rgb(2, 2, 34), rgb(0, 0, 70));
     color: orangered;
 }
 
+/* navbar */
+
+.nav {
+    background-color: rgb(14, 14, 240);
+    width: 80%;
+    background-color: orangered;
+    width: 80%;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin-left: 2rem;
+    box-shadow : 3px 3px 10px 3px rgba(255, 255, 255, 0.137);
+
+}
+
+.navbar-toggler-icon {
+    color: orangered;
+}
+
+.navbar-toggler {
+    background-color: rgba(255, 68, 0, 0.26);
+}
+
+
+
+/* Media Player */
 
 .mediaplay-section {
     margin: 0 auto;
@@ -51,3 +79,4 @@ body {
     padding: 10px;
     box-shadow: 0 0 5px 5px rgba(255, 68, 0, 0.384);
 }
+
