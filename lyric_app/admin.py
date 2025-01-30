@@ -4,11 +4,12 @@ from .models import PostApproval
 
 
 
+
 # Register your models here.
 class LyricAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'published', 'updated_at')
+    list_display = ('title', 'artist', 'status', 'updated_at')
     search_fields = ('title', 'content')
-    list_filter = ('published', 'updated_at')
+    list_filter = ('status', 'updated_at')
 
 admin.site.register(Lyric)
 

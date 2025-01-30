@@ -16,4 +16,10 @@ class LyricList(generic.ListView):
     
 def lyric_detail(request, pk):
     lyric = Lyric.objects.get(pk=pk)
+
     return render(request, 'lyric_app/lyric_detail.html', {'lyric': lyric})
+
+def lyric_create(request):
+  
+    return render(request, 'lyric_app/lyric_detail.html', {'lyric': lyric})
+
