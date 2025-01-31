@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 from .form import LyricForm
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 
 class GenreList(generic.ListView):
@@ -66,7 +67,12 @@ def lyric_detail(request, pk):
 
     return render(request, 'lyric_app/lyric_detail.html', {'lyric': lyric})
 
-
+@login_required
 def user_page(request):
+    user_lyrics = Lyric.objects.filter(artist=request.user)
+    return render(request, 'user_page.html', {'lyrics': user_lyrics})
+
+
+#def user_page(request):
     
-        return render(request, 'user_page.html')
+ #       return render(request, 'user_page.html')
