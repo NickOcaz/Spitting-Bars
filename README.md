@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Spitting Bars
-=======
 # Spittin' Bars
 test
 ## Table of Contents
@@ -55,6 +52,10 @@ test
 ### Introduction
 
 Spittin' Bars is a platform tailored for aspiring rappers, poets, and lyricists. It offers a space to compose and refine lyrics, allowing users to hone their craft and share their work with a community of like-minded individuals.
+
+### Target Audience
+
+Our app is a haven for creative writers, whether you're a rapper, songwriter, poet, or simply someone who loves the art of words. Imagine a platform that's not only quick and easy to use but also packed with features to fuel your creativity. Dive into a world of backing tracks that spark inspiration and provide the perfect practice environment. Save your masterpieces for personal reflection or share them with a vibrant community eager to celebrate your talent. Whether you're recording, performing live, or memorizing your verses, our app is your ultimate companion, empowering you to elevate your craft and connect with fellow wordsmiths.
 
 ### UX - User Experience
 
@@ -310,4 +311,3 @@ To create a new branch from the main branch, follow these steps:
 * Additional Reading/Tutorials/Books/Blogs
 
 * Acknowledgements
->>>>>>> bd4134bcc3dcb4b55b3a164314bf1a1d4e24c6e5
