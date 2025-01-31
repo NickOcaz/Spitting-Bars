@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-STATUS = ((0, "Draft"), (1, "Publish"))
+STATUS = ((0, "Personal"), (1, "Published"))
 
 # Create your models here.
 
@@ -20,6 +20,8 @@ class Lyric(models.Model):
     lyric = models.TextField()
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=0)
+    is_protected = models.BooleanField(default=False)
+    is_approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

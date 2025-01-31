@@ -37,3 +37,30 @@ def lyric_create(request):
     lyricform = LyricForm()
     
     return render(request, 'lyric_app/lyric_create.html', {'lyricform': lyricform})
+
+def lyric_edit(request, pk):
+    lyric = Lyric.objects.get(pk=pk)
+    lyricform = LyricForm(instance=lyric)
+    if request.method == 'POST':
+        lyricform = LyricForm(request.POST, instance=lyric)
+        if lyricform.is_valid():
+            lyric = lyricform.save(commit=False)
+            lyric.artist = request.user
+            lyric.save()
+            messages.success(request, 'Lyric updated successfully')
+            return redirect('home')
+    lyricform = LyricForm(instance=lyric)
+    
+    return render(request, 'lyric_app/lyric_edit.html', {'lyricform': lyricform, 'lyric': lyric})
+
+def lyric_delete(request, pk):
+    lyric = Lyric.objects.get(pk=pk)
+    lyric.delete()
+    messages.success(request, 'Lyric deleted successfully')
+    return redirect('home')
+
+
+def lyric_detail(request, pk):
+    lyric = Lyric.objects.get(pk=pk)
+
+    return render(request, 'lyric_app/lyric_detail.html', {'lyric': lyric})

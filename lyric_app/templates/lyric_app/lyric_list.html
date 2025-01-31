@@ -35,12 +35,13 @@
                         <img class="card-img-top" src=" {{ genre.featured_image.url }}" alt="{{ genre.name }}">
                         {% endif %}
                     </div> -->
-                    <a href="{% url 'lyric_detail' lyric.id %}"
-                        class="lyric-link {% if lesson.status == 0 %}faded{% endif %}">
-                        <h2 class="card-title {% if lyric.status == 0 %}faded{% endif %}">{{ lyric.title }}</h2>
-                        <p class="card-text {% if lesson.status == 0 %}faded{% endif %}">{{ lyric.updated_at }}</p>
+                    <a href="{% url 'lyric_detail' lyric.id %}" class="lyric-link">
+                        <h2 class="card-title {% if lyric.status == 0 %}personal {% else %}published{% endif %}">{{ lyric.title }}</h2>
+                        <span class="card-text">{{ lyric.updated_at }}</span>
+                        <a href="{% url 'lyric_edit' lyric.id %}" class="btn btn-secondary float-end">Edit</a>
                     </a>
                     <!-- <p class="card-text text-muted h6">{{ lesson.created_on }}</p> -->
+                     
                 </div>
             </div>
         </div>

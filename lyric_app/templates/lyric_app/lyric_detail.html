@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <h4 class="lyric-title">{{ lyric.title }}</h4>
+                <p class="lyric-subtitle">{{ lyric.artist }} | {{ lyric.updated_at }}</p>
+                <div class="masthead-buttons">
+                    <!-- Edit Lesson Button-->
+                    {% if user.is_authenticated and user == lyric.artist %}
+                    <a href="{% url 'lyric_edit' lyric.id %}" class="btn btn-edit">Edit Lyric</a>
+                    {% endif %}
+
+                </div>
+            </div>
+            <!--image expansion -->
+            <!-- <div class="d-none d-md-block col-md-6 masthead-image">
+                {% if "placeholder" in lesson.featured_image.url %}
+                <img src="{% static 'images/placeholder.jpg' %}" class="scale" alt="placeholder image">
+                {% else %}
+                <img src="{{ lyric.featured_image.url }}" class="scale" alt="{{ lyric.title }}">
+                {% endif %}
+
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4 mt-3 left top">
+            <div class="card-body">
+                <div class="card-text">
+                    {{ lyric.lyric | safe }} <!-- Displaying Lyric of the User>-->
+
+                </div>
+                <hr />
+
+            </div>
+        </div>
+    </div>
+    <hr />
+
+
+</div>
+
+
+{% endblock content %}

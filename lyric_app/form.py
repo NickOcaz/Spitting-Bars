@@ -7,8 +7,8 @@ class LyricForm(forms.ModelForm):
         fields = ['title', 'artist', 'lyric', 'genre', 'status']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'artist': forms.Select(attrs={'class': 'form-control'}),
             'lyric': forms.Textarea(attrs={'class': 'form-control'}),
             'genre': forms.Select(attrs={'class': 'form-control'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
+            'is_protected': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
