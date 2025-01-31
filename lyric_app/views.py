@@ -59,7 +59,7 @@ def lyric_delete(request, pk):
     lyric = Lyric.objects.get(pk=pk)
     lyric.delete()
     messages.success(request, 'Lyric deleted successfully')
-    return redirect('home')
+    return redirect('user_page')
 
 
 def lyric_detail(request, pk):

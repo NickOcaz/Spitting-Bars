@@ -72,6 +72,14 @@ body {
     border: none;
 }
 
+.alert {
+    background-color: #13b30d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
 .faded {
     color: rgb(172, 175, 175);
 }
