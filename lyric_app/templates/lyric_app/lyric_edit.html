@@ -6,58 +6,59 @@
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-6 text-center">
-            <h2>Edit Lyric</h2>
-            <p>You can <em>Update</em> or <em>Delete</em> the lyric here!</p>
+            <h2>Edit Your Masterpiece</h2>
+            <p>You can <em>Update, Delete</em> or <em>Publish</em> your lyric here!</p>
+            <p>Use our selection of backing tracks to inspire you</p>
             
             <div class="mediaplay-section">
                 {% block mediaplay %}
                 <p>Select Track:</p>
             
                 <select id="audioSelect">
-                  <option value="{% static 'media/beat1.mp3' %}">Midnight Stalker</option>
-                  <option value="{% static 'media/beat2.mp3' %}">Nuthin But A</option>
-                  <option value="{% static 'media/beat3.mp3' %}">Gimme Dat</option>
+                <option value="{% static 'media/beat1.mp3' %}">Midnight Stalker</option>
+                <option value="{% static 'media/beat2.mp3' %}">Nuthin But A</option>
+                <option value="{% static 'media/beat3.mp3' %}">Gimme Dat</option>
                 </select>
                 <button id="playButton">Play Audio</button>
                 <button id="stopButton">Stop Audio</button>
                 <script>
-                      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                      let source;
+                    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    let source;
             
-                      document.getElementById('playButton').addEventListener('click', function() {
-                          const audioFilePath = document.getElementById('audioSelect').value;
+                    document.getElementById('playButton').addEventListener('click', function() {
+                        const audioFilePath = document.getElementById('audioSelect').value;
             
-                          fetch(audioFilePath)
-                              .then(response => response.arrayBuffer())
-                              .then(buffer => audioCtx.decodeAudioData(buffer))
-                              .then(audioBuffer => {
-                                  if (source) {
-                                      source.stop();
-                                  }
-                                  source = audioCtx.createBufferSource();
-                                  source.buffer = audioBuffer;
-                                  source.loop = true;
+                        fetch(audioFilePath)
+                            .then(response => response.arrayBuffer())
+                            .then(buffer => audioCtx.decodeAudioData(buffer))
+                            .then(audioBuffer => {
+                                if (source) {
+                                    source.stop();
+                                }
+                                source = audioCtx.createBufferSource();
+                                source.buffer = audioBuffer;
+                                source.loop = true;
             
-                                  source.connect(audioCtx.destination);
-                                  source.start(0);
-                              })
-                              .catch(error => console.error('Error fetching audio:', error));
-                      });
+                                source.connect(audioCtx.destination);
+                                source.start(0);
+                            })
+                            .catch(error => console.error('Error fetching audio:', error));
+                    });
             
-                      document.getElementById('stopButton').addEventListener('click', function() {
-                          if (source) {
-                              source.stop();
-                          }
-                      });
+                    document.getElementById('stopButton').addEventListener('click', function() {
+                        if (source) {
+                            source.stop();
+                        }
+                    });
             
-                      document.getElementById('audioSelect').addEventListener('change', function() {
-                          if (source) {
-                              source.stop();
-                          }
-                      });
+                    document.getElementById('audioSelect').addEventListener('change', function() {
+                        if (source) {
+                            source.stop();
+                        }
+                    });
                     </script>
                 {% endblock %}
-              </div>
+            </div>
             <!-- add your form here. Your submit button should 
                                 have the classes of btn, btn-secondary -->
             <form method="POST">
