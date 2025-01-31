@@ -23,8 +23,8 @@ class LyricAdmin(admin.ModelAdmin):
         queryset.update(status=0)  # Assuming 'unpublished' corresponds to 0
         self.message_user(request, "Selected lyrics have been unpublished.")
 
-    publish_lyrics.short_description = "Publish selected lyrics"
-    unpublish_lyrics.short_description = "Unpublish selected lyrics"
+    publish_lyrics.short_description = "Accept"
+    unpublish_lyrics.short_description = "Deny"
 
 admin.site.register(Lyric, LyricAdmin)
 
