@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from lyric_app import views as lyric_views
 
+
 urlpatterns = [
     # path('', lyric_views.index, name='index'), 
 

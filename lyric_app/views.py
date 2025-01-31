@@ -64,3 +64,7 @@ def lyric_detail(request, pk):
     lyric = Lyric.objects.get(pk=pk)
 
     return render(request, 'lyric_app/lyric_detail.html', {'lyric': lyric})
+
+
+def user_page(request):
+        return render(request, 'user_page.html')
