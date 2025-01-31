@@ -19,7 +19,7 @@ for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
       e.preventDefault(); // Prevents the default behavior of the button
       let lyricID = e.target.getAttribute("lyric_id");
-      deleteConfirm.href = `/lyric/delete/${lyricID}`;
+      deleteConfirm.href = `/lyric_delete/${lyricID}`;
       deleteModal.show();
     });
 }
