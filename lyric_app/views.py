@@ -5,6 +5,7 @@ from .models import Genre, Lyric
 from django.contrib import messages
 from django.shortcuts import redirect
 from .form import LyricForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -67,4 +68,5 @@ def lyric_detail(request, pk):
 
 
 def user_page(request):
+    
         return render(request, 'user_page.html')

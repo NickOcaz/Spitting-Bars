@@ -1,8 +1,45 @@
-/{% extends "base.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% block content %}
-<!--work in progress for concept about Genre list-->
 <h1>My Workspace</h1>
 
-<!-- index.html content ends here -->
+<div class="container">
+    <div class="row">
+        <!-- Placeholder card for creating a new genre  -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                        <!-- <div class="image-flash">
+                            <p class="artist">Artist: none</p>
+                        </div> -->
+                    </div>
+                    <a href="{% url 'lyric_create' %}" class="lyric-link faded">
+                        <h2 class="card-title">New</h2>
+                        <!-- <p class="card-text">Genre excerpt</p> -->
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p>asdas</p>
+        {% for lyric in lyrics %}
+            {% if lyric.user == request.user %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                    <div class="image-flash">
+                        <p class="artist">Artist: {{ lyric.artist }}</p>
+                    </div>
+                    </div>
+                    <a href="{% url 'lyric_detail' lyric.id %}" class="lyric-link">
+                    <h2 class="card-title">{{ lyric.title }}</h2>
+                    <p class="card-text">{{ lyric.genre }}</p>
+                    </a>
+                </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+
 {% endblock %}
