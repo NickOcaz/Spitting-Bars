@@ -1,16 +1,125 @@
 body {
-    background-color: rgb(2, 2, 34);
-    color: orangered;
+    background-color: #001f5c;
+}
+
+.brand {
+    font-family: "Caveat", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4F;
+}
+
+.lyric-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.lyric-link:hover,
+.page-link {
+    color: #E84610;
+}
+
+.lyric-title {
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.lyric-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: #188181;
+    color: #fff;
+    display: inline-block;
+    /* Ensure the button is visible */
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #23BBBB;
+}
+
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #E84610;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
+.faded {
+    color: rgb(172, 175, 175);
+}
+
+.approval {
+    color: rgb(222, 146, 168);
+}
+
+.faded {
+    opacity: 0.5;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.personal {
+    color: #E84610;
+}
+
+.published {
+    color: #188181; 
 }
 
 /* navbar */
 
 .nav {
     background-color: rgb(14, 14, 240);
-    color: orangered;
+    width: 80%;
+    background-color: orangered;
     width: 80%;
 }
 
+.navbar-brand {
+    padding: 0;
+    margin-left: 2rem;
+    box-shadow : 3px 3px 10px 3px rgba(255, 255, 255, 0.137);
+
+}
+
+.navbar-toggler-icon {
+    color: orangered;
+}
+
+.navbar-toggler {
+    background-color: rgba(255, 68, 0, 0.26);
+}
 
 /* Media Player */
 
@@ -61,4 +170,3 @@ body {
     padding: 10px;
     box-shadow: 0 0 5px 5px rgba(255, 68, 0, 0.384);
 }
-
