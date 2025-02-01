@@ -37,7 +37,7 @@
                     </div> -->
                     <a href="{% url 'lyric_detail' lyric.id %}" class="lyric-link">
                         <h2 class="card-title {% if lyric.status == 0 %}personal {% else %}published{% endif %}">{{ lyric.title }}</h2>
-                        <span class="card-text"> <strong>{{ lyric.artist }}</strong></span><br
+                        <span class="card-text"> <strong>{{ lyric.artist }}</strong></span><br>
                         <span class="card-text"><em>{{ lyric.updated_at }}</em></span>
                         <span class="card-text"><em>{{ lyric.updated_at }}</em></span>
                         

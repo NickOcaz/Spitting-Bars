@@ -4,7 +4,7 @@ from django.views import generic
 from .models import Genre, Lyric
 from django.contrib import messages
 from django.shortcuts import redirect
-from .form import LyricForm
+from .forms import LyricForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -20,6 +20,9 @@ class LyricList(generic.ListView):
     template_name = 'lyric_app/lyric_list.html'
     context_object_name = 'lyrics'
     paginate_by = 8
+    
+def home(request):
+    return render(request, 'lyric_app/index.html')
     
 def lyric_detail(request, pk):
     lyric = Lyric.objects.get(pk=pk)
