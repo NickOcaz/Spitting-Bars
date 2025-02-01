@@ -10,6 +10,7 @@ urlpatterns = [
     path('lyric/edit/<int:pk>/', views.lyric_edit, name='lyric_edit'),
     path('lyric_detail/<int:pk>/', views.lyric_detail, name='lyric_detail'),
     path('lyric/user_page/', views.user_page, name='user_page'),
+    
     path('', views.home, name='home'),                      # updated from path('', views.LyricList.as_view(), name='home'), by Jeff
     # path('', views.LyricList.as_view(), name='home'),     # rmoved for new index page by Jeff
     # path('genre/create/', views.GenreCreate.as_view(), name='genre_create'), # to meet unit test requirements
