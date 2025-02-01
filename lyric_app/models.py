@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 
 
 STATUS = ((0, "Personal"), (1, "Published"))
+STYLE = (0, "Rap"), (1, "Song"), (2, "Poem"), (3, "Other")
+
 
 # Create your models here.
 
@@ -18,6 +20,7 @@ class Lyric(models.Model):
     title = models.CharField(max_length=150)
     artist = models.ForeignKey(User, on_delete=models.CASCADE)
     lyric = models.TextField()
+    style = models.IntegerField(choices=STYLE, default=0)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=0)
     is_protected = models.BooleanField(default=False)

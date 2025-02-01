@@ -1,0 +1,94 @@
+[33ma5913bd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m styled card font
+[33m8212d7d[m merge main
+[33mb296061[m removed delete button from home cards
+[33m0ea16bd[m Merge pull request #37 from NickOcaz/jeff
+[33mb7a374a[m update list
+[33m0248222[m Merge branch 'main' of https://github.com/NickOcaz/Spitting-Bars
+[33m7f56aa9[m fixed admin approval of publisehd pages
+[33mf060d38[m Merge pull request #36 from NickOcaz/jeff
+[33mc83451d[m add is protected
+[33m5f7296d[m Merge pull request #35 from NickOcaz/main
+[33m172fc3d[m fix delete
+[33me4519e7[m Merge branch 'main' of https://github.com/NickOcaz/Spitting-Bars
+[33m5f8aa57[m update readme
+[33m6999ad8[m Merge pull request #34 from NickOcaz/jeff
+[33m1d7d190[m fix delete
+[33m1d23ff1[m Merge pull request #33 from NickOcaz/main
+[33me8c14aa[m removed edit button from home screen which stops unauthorised users editing posts
+[33maab3ef6[m media player added to all editors
+[33me3a084a[m user workspace diplays all their personal work
+[33m4574a21[m Merge branch 'main' of https://github.com/NickOcaz/Spitting-Bars
+[33m444f0d2[m fix css link
+[33m6f99ee0[m Merge pull request #32 from NickOcaz/jeff
+[33m1d5695b[m Merge pull request #31 from NickOcaz/main
+[33m1b56959[m user page link fix
+[33me75202f[m user workspace page created and displayed link  on homepage if logged in
+[33md292d36[m merge main
+[33m2de2dff[m Merge branch 'main' of https://github.com/NickOcaz/Spitting-Bars
+[33m8205cc8[m styling media player
+[33m78e9d6c[m Merge pull request #30 from NickOcaz/jeff
+[33mf4e945d[m Merge branch 'main' into jeff
+[33m350ea5c[m Merge branch 'jeff' of https://github.com/NickOcaz/Spitting-Bars into jeff
+[33m480d463[m add CRUD lyric
+[33mc482f40[m fix merge conflicts
+[33me2d1565[m styled media player
+[33me036d6f[m installed css and styled media player
+[33md8fc556[m javascript: media looper created for backing tracks
+[33me768d4e[m Merge pull request #29 from NickOcaz/main
+[33m2260483[m Merge branch 'jeff' into main
+[33m7219743[m Added messages
+[33m9949ec5[m fix requirements
+[33m6cc5a73[m fix requirements
+[33mc250617[m Merge pull request #28 from NickOcaz/jeff
+[33mb603a42[m Merge branch 'jeff' of https://github.com/NickOcaz/Spitting-Bars into jeff
+[33m1b2b9f3[m fix login
+[33m4fa70e3[m Merge pull request #27 from NickOcaz/main
+[33mf3869f0[m fix login
+[33m969aac1[m Merge pull request #26 from NickOcaz/jeff
+[33m8ed534d[m Merge branch 'jeff' of https://github.com/NickOcaz/Spitting-Bars into jeff
+[33mc1c1095[m debug off
+[33md4026c5[m Merge pull request #25 from NickOcaz/main
+[33mcd45052[m Merge branch 'jeff' of https://github.com/NickOcaz/Spitting-Bars into jeff
+[33m6f8b0d2[m create lyric
+[33m4efc06b[m Merge pull request #24 from NickOcaz/jeff
+[33m6fcaa9d[m Merge branch 'main' into jeff
+[33m76453b8[m test : fixed requirements
+[33mcb8e1d0[m Add Allauth files
+[33m0c3e5da[m sync index.html
+[33m3940e17[m Merge branch 'jeff' of https://github.com/NickOcaz/Spitting-Bars into jeff
+[33mc1e0da9[m added Allauth working on lyric_list.html
+[33m31c935d[m Create style.css (#21)
+[33mf1ecbb2[m add post approval to admin panel
+[33maab062b[m Jeff (#18)
+[33ma02ce88[m Nick (#19)
+[33m2fbc0f4[m Merge branch 'main' into jeff
+[33m3eb96e7[m update LyricAdmin
+[33me79c518[m Merge branch 'jeff' of https://github.com/NickOcaz/Spitting-Bars into jeff
+[33mf683d46[m Jeff (#17)
+[33md1136ec[m Merge pull request #16 from NickOcaz/main
+[33m780ef63[m created empty genre_list.html
+[33mbd4134b[m Added: Admin panel access to lyric data
+[33m37302a7[m Jeff (#15)
+[33mb373ad7[m Merge branch 'main' into jeff
+[33m9994508[m Update README: deployment information
+[33md874f9e[m Merge branch 'main' into jeff
+[33me3e91ac[m created models
+[33mdc7550b[m test branch (#14)
+[33m560db30[m update readme
+[33m01ea058[m Merge remote changes
+[33mb9e1367[m update readme
+[33m1b81486[m Mahmudur (#13)
+[33m698f632[m Update runtime.txt to use Python 3.12.2
+[33m920ab76[m Update runtime.txt to use Python 3.13
+[33m50b3f0f[m fix views
+[33mf63c10b[m fix views
+[33m9b2722e[m fix views
+[33m7a82f00[m fix views
+[33m9cdcbec[m PostgrSQL installed
+[33m8c2f406[m installed whitenoise
+[33md30abc7[m installed gunicorn & Procfile
+[33mdc6646c[m lyric_app installed
+[33m9572f80[m installed Django
+[33mb8bffca[m[33m ([m[1;32mMahmudur[m[33m)[m test
+[33me928561[m Initial commit
+[33ma1a5211[m test branch
