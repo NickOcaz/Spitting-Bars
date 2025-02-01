@@ -4,7 +4,7 @@ from django.views import generic
 from .models import Genre, Lyric
 from django.contrib import messages
 from django.shortcuts import redirect
-from .form import LyricForm
+from .forms import LyricForm
 from django.contrib.auth.decorators import login_required
 
 
