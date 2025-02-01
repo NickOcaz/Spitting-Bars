@@ -21,6 +21,9 @@ class LyricList(generic.ListView):
     context_object_name = 'lyrics'
     paginate_by = 8
     
+def home(request):
+    return render(request, 'lyric_app/index.html')
+    
 def lyric_detail(request, pk):
     lyric = Lyric.objects.get(pk=pk)
 
