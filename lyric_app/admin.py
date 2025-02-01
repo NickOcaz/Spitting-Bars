@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Lyric
-from .models import PostApproval
 
 
 # Register your models here.
