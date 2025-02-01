@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -27,6 +28,18 @@ class Lyric(models.Model):
     
     class Meta:
         ordering = ["-created_at"]
+    
+    def clean(self):
+        if not self.title:
+            raise ValidationError('Title cannot be empty')
+        if len(self.title) > 150:
+            raise ValidationError('Title is too long')
+        if not self.lyric:
+            raise ValidationError('Lyric content cannot be empty')
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
     
     def __str__(self):
         return self.title
