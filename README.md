@@ -188,6 +188,102 @@ Community Page:
 +------------+         +------------+
 ```
 
+## Realtionship
+
+One-to-Many: Each user can have multiple lyrics, but each piece of lyrics belongs to one user. This is represented by the foreign key author_id in the Lyrics table.
+
+## Testing
+
+
+### Feature-by-Feature Testing:
+
+- Navigation:
+Testested for smooth transitions between pages, links directing to the correct destinations.
+- Responsive Design: 
+Checked for compatibility across various devices and screen sizes.
+
+- Lyrics Display: 
+Lyrics are properly showcased with accurate descriptions and links.
+
+- All Forms: 
+Tested the form submission process, ensuring the user receives a confirmation.
+
+### User Experience Testing:
+
+- Usability Testing: 
+The current implementation has meet the goal setup, all forms are functioning as expected, the logic meet design scope and user stories' requirements.  
+
+- Accessibility Testing: 
+All images and links have well labeled alt text for screen reader compatibility compliance.
+
+### Compatibility Testing:
+
+- Browser Compatibility: 
+Testing applied on different browsers (Chrome, Firefox, Microsoft Edge,) to ensure consistent performance.
+
+- Device Compatibility:
+
+Functionality tested across various devices (desktops, laptops, tablets, and mobile phones).
+
+## Code Validation
+
+### HTML
+
+
+### CSS 
+
+
+### Python
+
+I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+
+| APP | File | CI URL |
+| --- | --- | --- |
+| lyric_app | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NickOcaz/Spitting-Bars/refs/heads/main/lyric_app/admin.py) | 
+| lyric_app | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NickOcaz/Spitting-Bars/refs/heads/main/lyric_app/forms.py) | 
+| lyric_app | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NickOcaz/Spitting-Bars/refs/heads/main/lyric_app/models.py) | 
+| lyric_app | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NickOcaz/Spitting-Bars/refs/heads/main/lyric_app/urls.py)  | 
+| lyric_app | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NickOcaz/Spitting-Bars/refs/heads/main/lyric_app/vies.py) | 
+
+
+### Unit test
+
+| APP | File | CI URL |
+| --- | --- | --- |
+| lyric_app | test_models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NickOcaz/Spitting-Bars/refs/heads/main/lyric_app/test_models.py) | 
+| lyric_app | test_forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NickOcaz/Spitting-Bars/refs/heads/main/lyric_app/test_forms.py) | 
+| lyric_app | test_views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/NickOcaz/Spitting-Bars/refs/heads/main/lyric_app/test_views.py) | 
+
+
+![Unit Test Result](assets/images/unit-test-result.jpg)
+
+
+
+### Javascript
+I have validated all my js files on [javascript validator](jshint.com) give some warnings about ES6 version syntax on them. 
+![image](assets/images/jscodetest.jpg)
+
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser |  |  |  |  | Notes |
+| --- | --- | --- | --- | --- | --- |
+| Chrome |   Works as expected |
+| Firefox |   Works as expected |
+| Microsoft Edge|   Works as expected |
+
+## Responsiveness
+
+I've tested my deployed project on multiple devices to check for responsiveness issues.
+
+|  |  |  | Notes |
+| --- | --- | --- | --- |
+| Mobile (DevTools) | ![image](assets/w3c/mobiletest.jpg) | Works as expected |
+| Tablet (DevTools) | ![image](assets/w3c/tablettest.jpg) | Works as expected |
+| Desktop | ![image](assets/w3c/desktoptest.jpg) | Works as expected |
+
 ## Deployment
 
 * Connecting to GitHub
@@ -274,6 +370,22 @@ To create a new branch from the main branch, follow these steps:
 ![Heroku Deployment Step 4](readme_docs/readme_images/horoku-deply4.png)
 
 ## Credits
+
+- [Code Institute: Blog project as foundation of this project] 
+- [CI Blog](https://github.com/Code-Institute-Solutions/blog.git)
+
+### Content
+
+ - [Codepilot](https://copilot.microsoft.com/)
+ - [Microsoft Designer](https://designer.microsoft.com/)
+
+| Source | Location | Notes | 
+| --- | --- | --- |
+| [Shar-nm](https://github.com/shar-nm/lens-whisperer?tab=readme-ov-file) | README and Testing | a wonderful robust template to help me complete this readme.MD file |
+| [Very Academy](https://www.youtube.com/watch?v=qJUgC4T5e_E) | Youtube channel | The channel offers vast of Django projects model orm videos |
+| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
+| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+| [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/) | entire site | responsivenes and CSS |
 
 * Code
 
