@@ -22,19 +22,19 @@
             </div>
         </div>
         {% for lyric in lyrics %}
-        {% if lyric.artist == request.user %}
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <a href="{% url 'lyric_detail' lyric.id %}"
-                        class="lyric-link">
+                    <a href="{% url 'lyric_detail' lyric.id %}" class="lyric-link">
                         <h2 class="card-title">{{ lyric.title }}</h2>
+                        <p>{{ lyric.genre }} </p>
+                        <p>{{ lyric.created_at }} </p>
                     </a>
                 </div>
             </div>
         </div>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        {% endblock %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
