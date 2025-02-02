@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Lyric
+from .models import Lyric, Genre
 
 
 # Register your models here.
 
 class LyricAdmin(admin.ModelAdmin):
-    list_display = ('title', 'artist', 'status', 'updated_at')
+    list_display = ('title', 'artist', 'genre', 'status', 'updated_at')
     search_fields = ('title', 'content')
     list_filter = ('status', 'updated_at')
     actions = ['publish_lyrics', 'unpublish_lyrics']
@@ -27,4 +27,5 @@ class LyricAdmin(admin.ModelAdmin):
 
 admin.site.register(Lyric, LyricAdmin)
 
+admin.site.register(Genre)
 
