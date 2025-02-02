@@ -15,7 +15,7 @@ class GenreList(generic.ListView): # Do we need a class? can we just filter via 
     template_name = 'lyric_app/genre_list.html'
     
 
-class LyricList(generic.ListView): # if on home page then needs to be only one those that are approved by admin
+class LyricList(generic.ListView): # if on home page then needs to be only those that are approved by admin
     queryset = Lyric.objects.filter(status=1)
     template_name = 'lyric_app/lyric_list.html'
     context_object_name = 'lyrics'

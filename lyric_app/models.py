@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-STATUS = ((0, "Personal"), (1, "Published"))
+STATUS = ((0, "Personal"), (1, "Publish Me (needs admin approval)"))
 STYLE = (("Rap", "Rap"), ("Song", "Song"), ("Poem", "Poem"), ("Other", "Other"))
 
 class Genre(models.Model):
