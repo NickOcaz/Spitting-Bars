@@ -7,7 +7,7 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <h4 class="lyric-title">{{ lyric.title }}</h4>
-                <p class="lyric-subtitle">{{ lyric.artist }} | {{ lyric.updated_at }}</p>
+                <p class="lyric-subtitle">{{ lyric.artist }} | {{ lyric.updated_at }} {{ lyric.is_approved }}</p>
                 <div class="masthead-buttons">
                     <!-- Edit Lesson Button-->
                     {% if user.is_authenticated and user == lyric.artist %}
@@ -34,8 +34,7 @@
         <div class="col card mb-4 mt-3 left top">
             <div class="card-body">
                 <div class="card-text">
-                    {{ lyric.lyric | safe }} <!-- Displaying Lyric of the User>-->
-
+                    {{ lyric.lyric | linebreaksbr | safe }} <!-- Displaying Lyric of the User>-->
                 </div>
                 <hr />
 

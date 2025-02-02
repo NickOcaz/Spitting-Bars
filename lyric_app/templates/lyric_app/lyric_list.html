@@ -5,25 +5,8 @@
 <!-- index.html content starts here -->
 <div class="container">
     <div class="row">
-        <!-- Placeholder card for creating a new genre  -->
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="image-container">
-                        <!-- <div class="image-flash">
-                            <p class="artist">Artist: none</p>
-                        </div> -->
-                    </div>
-                    <a href="{% url 'lyric_create' %}" class="lyric-link faded">
-                        <h2 class="card-title">Create lyric</h2>
-                        <!-- <p class="card-text">Genre excerpt</p> -->
-                    </a>
-                </div>
-            </div>
-        </div>
-
         <!-- Iterate over the lesson_list to display existing lessons -->
-        {% if user.is_authenticated %}
+        
         {% for lyric in lyrics %}
         <div class="col-md-4">
             <div class="card mb-4">
@@ -36,10 +19,11 @@
                         {% endif %}
                     </div> -->
                     <a href="{% url 'lyric_detail' lyric.id %}" class="lyric-link">
-                        <h2 class="card-title {% if lyric.status == 0 %}personal {% else %}published{% endif %}">{{ lyric.title }}</h2>
-                        <span class="card-text"> <strong>{{ lyric.artist }}</strong></span><br>
+                        <h2 class="card-title {% if lyric.status == 1 %}personal {% else %}published{% endif %}">{{ lyric.title }}</h2>
+                        <span class="card-text"> <strong>{{ lyric.artist }} </strong> - <em>{{ lyric.genre }}</em></span><br>
                         <span class="card-text"><em>{{ lyric.updated_at }}</em></span>
-                        <span class="card-text"><em>{{ lyric.updated_at }}</em></span>
+                        <br>
+                        <span class="card-text"><em>approved: {{ lyric.status }}</em></span> <!-- only display if admin approved -->
                         
                     </a>
                     <!-- <p class="card-text text-muted h6">{{ lesson.created_on }}</p> -->
@@ -48,7 +32,7 @@
             </div>
         </div>
         {% endfor %}
-        {% endif %}
+        
     </div>
 </div>
 {% if is_paginated %}
