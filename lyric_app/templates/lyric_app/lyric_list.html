@@ -23,7 +23,7 @@
         </div>
 
         <!-- Iterate over the lesson_list to display existing lessons -->
-        {% if user.is_authenticated %}
+        
         {% for lyric in lyrics %}
         <div class="col-md-4">
             <div class="card mb-4">
@@ -49,7 +49,7 @@
             </div>
         </div>
         {% endfor %}
-        {% endif %}
+        
     </div>
 </div>
 {% if is_paginated %}
