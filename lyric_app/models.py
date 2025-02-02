@@ -17,7 +17,7 @@ class Lyric(models.Model):
     title = models.CharField(max_length=150)
     artist = models.ForeignKey(User, on_delete=models.CASCADE)
     lyric = models.TextField()
-    style = models.IntegerField(choices=STYLE, default=0)  
+    style = models.IntegerField(choices=STYLE, default=0)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE) #not required style shoiuld be enough
     status = models.IntegerField(choices=STATUS, default=0)
     is_protected = models.BooleanField(default=False) #not neccessary ad the user as a second option to protect with prompt
