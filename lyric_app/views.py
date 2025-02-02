@@ -73,9 +73,6 @@ def lyric_detail(request, pk):
 @login_required
 def user_page(request):
     user_lyrics = Lyric.objects.filter(artist=request.user)
-    return render(request, 'user_page.html', {'lyrics': user_lyrics})
+   
+    return render(request, 'lyric_app/user_page.html', {'lyrics': user_lyrics})
 
-
-#def user_page(request):
-    
- #       return render(request, 'user_page.html')

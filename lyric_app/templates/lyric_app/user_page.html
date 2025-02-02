@@ -26,15 +26,15 @@
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <a href="{% url 'lyric_detail' lyric.id %}"
-                        class="lyric-link">
+                    <a href="{% url 'lyric_detail' lyric.id %}" class="lyric-link">
                         <h2 class="card-title">{{ lyric.title }}</h2>
                     </a>
                 </div>
             </div>
         </div>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        {% endblock %}
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
