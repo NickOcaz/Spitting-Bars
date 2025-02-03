@@ -174,6 +174,13 @@ Community Page:
 
 
 ## Entity Realtionship Models
+<<<<<<< HEAD
+``
+![ERD](readme_docs/readme_images/erd.jpg)
+ 
+``
+Realtionship
+=======
 ```
 +------------+         +------------+
 |   Genre    |         |   Lyrics   |
@@ -190,6 +197,7 @@ Community Page:
 
 ## Realtionship
 
+>>>>>>> 4662cd34af3f775c2113136ca2472c7e6d9a2809
 One-to-Many: Each user can have multiple lyrics, but each piece of lyrics belongs to one user. This is represented by the foreign key author_id in the Lyrics table.
 
 ## Testing
