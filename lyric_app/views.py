@@ -10,13 +10,13 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-class GenreList(generic.ListView):
+class GenreList(generic.ListView): # Do we need a class? can we just filter via style? 
     queryset = Genre.objects.all()
     template_name = 'lyric_app/genre_list.html'
     
 
-class LyricList(generic.ListView):
-    queryset = Lyric.objects.all()
+class LyricList(generic.ListView): # if on home page then needs to be only those that are approved by admin
+    queryset = Lyric.objects.filter(status=1)
     template_name = 'lyric_app/lyric_list.html'
     context_object_name = 'lyrics'
     paginate_by = 8
@@ -73,6 +73,5 @@ def lyric_detail(request, pk):
 @login_required
 def user_page(request):
     user_lyrics = Lyric.objects.filter(artist=request.user)
-   
-    return render(request, 'lyric_app/user_page.html', {'lyrics': user_lyrics})
 
+    return render(request, 'lyric_app/user_page.html', {'lyrics': user_lyrics})

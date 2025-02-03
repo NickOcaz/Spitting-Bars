@@ -1,18 +1,21 @@
+
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
 
 <p>Select Track:</p>
 
 <select id="audioSelect">
     <option value="{% static 'media/beat1.mp3' %}">Midnight Stalker</option>
-    <option value="{% static 'media/beat2.mp3' %}">Nuthin But A</option>
+    <option value="{% static 'media/beat2.mp3' %}">Nuthin But A . .</option>
     <option value="{% static 'media/beat3.mp3' %}">Gimme Dat</option>
     <option value="{% static 'media/beat4.mp3' %}">Far Out East</option>
 </select>
 <button id="playButton">Play Audio</button>
 <button id="stopButton">Stop Audio</button>
 <script>
+  
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     let source;
 
@@ -49,3 +52,39 @@
     });
 </script>
 {% endblock %}
+
+                    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    let source;
+            
+                    document.getElementById('playButton').addEventListener('click', function() {
+                        const audioFilePath = document.getElementById('audioSelect').value;
+            
+                        fetch(audioFilePath)
+                            .then(response => response.arrayBuffer())
+                            .then(buffer => audioCtx.decodeAudioData(buffer))
+                            .then(audioBuffer => {
+                                if (source) {
+                                    source.stop();
+                                }
+                                source = audioCtx.createBufferSource();
+                                source.buffer = audioBuffer;
+                                source.loop = true;
+            
+                                source.connect(audioCtx.destination);
+                                source.start(0);
+                            })
+                            .catch(error => console.error('Error fetching audio:', error));
+                    });
+            
+                    document.getElementById('stopButton').addEventListener('click', function() {
+                        if (source) {
+                            source.stop();
+                        }
+                    });
+            
+                    document.getElementById('audioSelect').addEventListener('change', function() {
+                        if (source) {
+                            source.stop();
+                        }
+                    });
+                    </script>
