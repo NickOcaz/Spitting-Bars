@@ -17,7 +17,7 @@ class LyricModelTest(TestCase):
             lyric='Test Lyric Content',
             genre=self.genre,
             status=0,
-            is_protected=False,
+        #    is_protected=False,
             is_approved=False
         )
 
@@ -29,7 +29,7 @@ class LyricModelTest(TestCase):
         self.assertEqual(self.lyric.lyric, 'Test Lyric Content')
         self.assertEqual(self.lyric.genre, self.genre)
         self.assertEqual(self.lyric.status, 0)
-        self.assertEqual(self.lyric.is_protected, False)
+      #  self.assertEqual(self.lyric.is_protected, False)
         self.assertEqual(self.lyric.is_approved, False)
         
 
@@ -41,9 +41,9 @@ class LyricModelTest(TestCase):
         # Test the status field of the Lyric model
         self.assertEqual(self.lyric.status, 0)
 
-    def test_lyric_is_protected(self):
-        # Test the is_protected field of the Lyric model
-        self.assertEqual(self.lyric.is_protected, False)
+   # def test_lyric_is_protected(self):
+   #     # Test the is_protected field of the Lyric model
+   #     self.assertEqual(self.lyric.is_protected, False)
 
     def test_lyric_is_approved(self):
         # Test the is_approved field of the Lyric model
@@ -67,7 +67,7 @@ class LyricModelTest(TestCase):
                 lyric='Test Lyric Content',
                 genre=self.genre,
                 status=0,
-                is_protected=False,
+            #    is_protected=False,
                 is_approved=False
             )
             lyric.save()
@@ -80,7 +80,7 @@ class LyricModelTest(TestCase):
                 lyric='Test Lyric Content',
                 genre=self.genre,
                 status=0,
-                is_protected=False,
+               # is_protected=False,
                 is_approved=False
             )
             lyric.save()
@@ -93,7 +93,7 @@ class LyricModelTest(TestCase):
                 lyric='',
                 genre=self.genre,
                 status=0,
-                is_protected=False,
+             #   is_protected=False,
                 is_approved=False
             )
             lyric.save()

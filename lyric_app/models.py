@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 STATUS = ((0, "Personal"), (1, "Publish Me (needs admin approval)"))
 STYLE = (("Rap", "Rap"), ("Song", "Song"), ("Poem", "Poem"), ("Other", "Other"))
+
 
 class Genre(models.Model):
     name = models.CharField(max_length=150, choices=STYLE, default="Rap")
@@ -27,4 +29,14 @@ class Lyric(models.Model):
     
     def __str__(self):
         return self.title
+
+      
+class PostApproval(models.Model):
+    lyric = models.OneToOneField(Lyric, on_delete=models.CASCADE)
+    approved_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    approved_at = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+    
+    def __str__(self):
+        return f"{self.lyric.title} - {'Published' if self.status == 1 else 'Draft'}"
 

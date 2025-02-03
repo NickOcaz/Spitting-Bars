@@ -1,4 +1,6 @@
 from django.contrib import admin
+from .models import Lyric
+#from .models import PostApproval
 from .models import Lyric, Genre
 
 
@@ -28,4 +30,3 @@ class LyricAdmin(admin.ModelAdmin):
 admin.site.register(Lyric, LyricAdmin)
 
 admin.site.register(Genre)
-
