@@ -200,19 +200,10 @@ Community Page:
 
 
 ## Entity Realtionship Models
-```
-+------------+         +------------+
-|   User     |         |   Lyrics   |
-|------------|         |------------|
-| id         |         | id         |
-| username   |         | title      |
-| password   |---------| content    |
-|            |         | author_id  |
-|            |         | published  |
-|            |         | created_at |
-|            |         | updated_at |
-+------------+         +------------+
-```
+``
+![ERD](readme_docs/readme_images/erd.jpg)
+ 
+``
 Realtionship
 One-to-Many: Each user can have multiple lyrics, but each piece of lyrics belongs to one user. This is represented by the foreign key author_id in the Lyrics table.
 
