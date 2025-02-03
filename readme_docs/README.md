@@ -269,6 +269,77 @@ The following tools and software were used in the project:
 
 Functionality tested across various devices (desktops, laptops, tablets, and mobile phones).
 
+## Manual Testing
+
+### User Input/Form Validation
+
+Testing was carried out on desktop using a Chrome browser to ensure all forms accept the intended input, process it correctly, and provide appropriate feedback to users.
+
+| Feature                | Tested? | User Input Required                              | User Feedback Provided                                                                                                 | Pass/Fail | Fix |
+| ---------------------- | ------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- | --------- | --- |
+| Navbar                 | Yes     | Click links in navbar                            | Navbar links take users to the intended locations (e.g., Home, Browse, Profile). Tooltips provide extra accessibility. | Pass      | -   |
+| Home Page Hero Section | Yes     | Click buttons on hero section                    | Buttons redirect users to the login or explore raps pages.                                                             | Pass      | -   |
+| Register Form          | Yes     | Email, username, password                        | Validation for empty fields, email format, password length, and password confirmation provided.                        | Pass      | -   |
+| Login Form             | Yes     | Email/username and password                      | Displays errors for incorrect credentials or empty fields.                                                             | Pass      | -   |
+| Create Rap Form        | Yes     | Title, lyrics, genre selection                   | Validation for required fields and character limits provided.                                                          | Pass      | -   |
+| Filter Raps Form       | Yes     | Dropdown selections for genre, rating, and theme | Updates rap list dynamically based on filter criteria or shows "No raps found" message.                                | Pass      | -   |
+| Comment on Rap         | Yes     | Text input                                       | Comments appear under the rap with the latest timestamp.                                                               | Pass      | -   |
+| Rate Rap               | Yes     | Click rating stars                               | Rating updates dynamically and reflects user input.                                                                    | Pass      | -   |
+| Delete Rap             | Yes     | Click delete button                              | Prompts user for confirmation before deleting the rap.                                                                 | Pass      | -   |
+| Logout Button          | Yes     | Click "Logout" button                            | Logs user out and redirects to login page.                                                                             | Pass      | -   |
+
+### Testing User Stories
+
+User stories were documented in the project board and tested on various screen sizes using Chrome DevTools. Multiple test accounts (e.g., RapUser1, LyricistPro) were created to ensure comprehensive coverage.
+
+| User Story                    | Acceptance Criteria Met? | Tested? | Response                                                                                              | Pass/Fail | Fix |
+| ----------------------------- | ------------------------ | ------- | ----------------------------------------------------------------------------------------------------- | --------- | --- |
+| #1 - Register as a User       | Yes                      | Yes     | User can register with a valid username, email, and password. Feedback provided for incorrect inputs. | Pass      | -   |
+| #2 - Log in as a User         | Yes                      | Yes     | User can log in using valid credentials. Errors displayed for invalid inputs.                         | Pass      | -   |
+| #3 - View Raps List           | Yes                      | Yes     | Raps are displayed with filtering options.                                                            | Pass      | -   |
+| #4 - Create a Rap             | Yes                      | Yes     | User can create and save rap lyrics.                                                                  | Pass      | -   |
+| #5 - Rate and Comment on Raps | Yes                      | Yes     | Users can rate and comment on raps. Feedback is instant.                                              | Pass      | -   |
+| #6 - Edit Profile             | Yes                      | Yes     | Users can update their profile info.                                                                  | Pass      | -   |
+| #7 - Logout Functionality     | Yes                      | Yes     | User is logged out and redirected to login page.                                                      | Pass      | -   |
+| #8 - Responsive Design        | Yes                      | Yes     | Website is fully functional on desktop, tablet, and mobile screens.                                   | Pass      | -   |
+
+### Device Testing
+
+The site was tested on the following devices for responsiveness:
+
+- **Desktop:** Chrome, Firefox, Safari
+- **Mobile:** iPhone (Safari), Android (Chrome)
+
+### Browser Compatibility
+
+The application was verified to work on the following browsers:
+
+- **Google Chrome** (latest)
+- **Mozilla Firefox** (latest)
+- **Safari** (iOS)
+
+### Accessibility
+
+The site was checked for basic accessibility using browser dev tools to ensure proper color contrast and screen reader support. Using the WAVE Accessibility Evaluation tool, the following results were found:
+
+- Minor contrast errors due to branding colors, but text remains legible.
+- All interactive elements have proper ARIA labels.
+- Alt text is properly assigned to all images.
+
+While the WAVE Accessibility Evaluation tool has identified contrast errors, these alerts do not indicate outright accessibility violations but rather areas for potential enhancement. Moving forward, we are committed to refining our design to better align with accessibility standards.
+
+### Solved Bugs
+
+Below is a list of key bugs that required extended investigation or assistance to resolve:
+
+| No. | Bug                                                               | Solved? | Fix                                                                                                                 | Solution Credit       |
+| --- | ----------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| 1   | CSRF token errors during form submissions in deployed Heroku app. | Yes     | Correctly added `{% csrf_token %}` in all forms and ensured `CSRF_TRUSTED_ORIGINS` was configured in `settings.py`. | Django Docs           |
+| 2   | Navbar not updating active link on page change.                   | Yes     | Updated the template logic to highlight the active page dynamically.                                                | StackOverflow         |
+| 3   | Certain filters not applying correctly on rap search.             | Yes     | Adjusted queryset logic in the view to ensure proper filtering.                                                     | ChatGPT + Django Docs |
+
+### Known Bugs
+
 ## Code Validation
 
 ### HTML
