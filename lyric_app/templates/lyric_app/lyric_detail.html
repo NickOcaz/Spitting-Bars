@@ -2,73 +2,75 @@
 
 <div class="masthead">
   <div class="container">
+    <div class="mediaplay-section">
+      {% block mediaplay %}
+      <p>Select Track:</p>
+      <select id="audioSelect">
+        <option value="{% static 'media/beat1.mp3' %}">
+          Midnight Stalker
+        </option>
+        <option value="{% static 'media/beat2.mp3' %}">Nuthin But A</option>
+        <option value="{% static 'media/beat3.mp3' %}">Gimme Dat</option>
+        <option value="{% static 'media/beat4.mp3' %}">Far Out East</option>
+      </select>
+      <button id="playButton">Play Audio</button>
+      <button id="stopButton">Stop Audio</button>
+      <script>
+        const audioCtx = new (window.AudioContext ||
+          window.webkitAudioContext)();
+        let source;
+
+        document
+          .getElementById("playButton")
+          .addEventListener("click", function () {
+            const audioFilePath =
+              document.getElementById("audioSelect").value;
+
+            fetch(audioFilePath)
+              .then((response) => response.arrayBuffer())
+              .then((buffer) => audioCtx.decodeAudioData(buffer))
+              .then((audioBuffer) => {
+                if (source) {
+                  source.stop();
+                }
+                source = audioCtx.createBufferSource();
+                source.buffer = audioBuffer;
+                source.loop = true;
+
+                source.connect(audioCtx.destination);
+                source.start(0);
+              })
+              .catch((error) =>
+                console.error("Error fetching audio:", error)
+              );
+          });
+
+        document
+          .getElementById("stopButton")
+          .addEventListener("click", function () {
+            if (source) {
+              source.stop();
+            }
+          });
+
+        document
+          .getElementById("audioSelect")
+          .addEventListener("change", function () {
+            if (source) {
+              source.stop();
+            }
+          });
+      </script>
+      {% endblock %}
+    </div>
     <div class="row g-0">
       <div class="col-md-6 masthead-text">
+        
         <h4 class="lyric-title">{{ lyric.title }}</h4>
         <p class="lyric-subtitle">
           {{ lyric.artist }} | {{ lyric.updated_at }} {{ lyric.is_approved }}
         </p>
-        <div class="mediaplay-section">
-          {% block mediaplay %}
-          <p>Select Track:</p>
-          <select id="audioSelect">
-            <option value="{% static 'media/beat1.mp3' %}">
-              Midnight Stalker
-            </option>
-            <option value="{% static 'media/beat2.mp3' %}">Nuthin But A</option>
-            <option value="{% static 'media/beat3.mp3' %}">Gimme Dat</option>
-            <option value="{% static 'media/beat4.mp3' %}">Far Out East</option>
-          </select>
-          <button id="playButton">Play Audio</button>
-          <button id="stopButton">Stop Audio</button>
-          <script>
-            const audioCtx = new (window.AudioContext ||
-              window.webkitAudioContext)();
-            let source;
-
-            document
-              .getElementById("playButton")
-              .addEventListener("click", function () {
-                const audioFilePath =
-                  document.getElementById("audioSelect").value;
-
-                fetch(audioFilePath)
-                  .then((response) => response.arrayBuffer())
-                  .then((buffer) => audioCtx.decodeAudioData(buffer))
-                  .then((audioBuffer) => {
-                    if (source) {
-                      source.stop();
-                    }
-                    source = audioCtx.createBufferSource();
-                    source.buffer = audioBuffer;
-                    source.loop = true;
-
-                    source.connect(audioCtx.destination);
-                    source.start(0);
-                  })
-                  .catch((error) =>
-                    console.error("Error fetching audio:", error)
-                  );
-              });
-
-            document
-              .getElementById("stopButton")
-              .addEventListener("click", function () {
-                if (source) {
-                  source.stop();
-                }
-              });
-
-            document
-              .getElementById("audioSelect")
-              .addEventListener("change", function () {
-                if (source) {
-                  source.stop();
-                }
-              });
-          </script>
-          {% endblock %}
-        </div>
+       
         <div class="masthead-buttons">
           <!-- Edit Lesson Button-->
           {% if user.is_authenticated and user == lyric.artist %}
