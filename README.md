@@ -237,9 +237,15 @@ Functionality tested across various devices (desktops, laptops, tablets, and mob
 
 ### HTML
 
+No error found duing validation
+
+![HTML Validation](readme_docs/readme_images/htmlval.png)
 
 ### CSS 
 
+No error found during validation
+
+![CSS Validation](readme_docs/readme_images/csslval.png)
 
 ### Python
 
