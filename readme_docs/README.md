@@ -409,6 +409,11 @@ git checkout -b new-branch-name
 
 - [Code Institute: Blog project as foundation of this project]
 - [CI Blog](https://github.com/Code-Institute-Solutions/blog.git)
+- Various Django and JavaScript tutorials influenced development.
+- [Django Documentation](https://docs.djangoproject.com/en/stable/) – Official Django framework documentation.
+- [Mozilla Developer Network (MDN)](https://developer.mozilla.org/) – Reference for HTML, CSS, and JavaScript best practices.
+- [Bootstrap Documentation](https://getbootstrap.com/) – Used for styling components and responsive design.
+- [Stack Overflow](https://stackoverflow.com/) – Various discussions and solutions for debugging and optimization.
 
 ### Content
 
@@ -423,10 +428,18 @@ git checkout -b new-branch-name
 | [WhiteNoise](http://whitenoise.evans.io)                                    | entire site        | hosting static files on Heroku temporarily                          |
 | [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/)         | entire site        | responsivenes and CSS                                               |
 
-- Code
+### Media
 
-- Media
-
+- User-uploaded rap lyrics and images.
+- [Unsplash](https://unsplash.com/) – Free high-quality images for placeholders.
+- [Font Awesome](https://fontawesome.com/) – Icons used across the project.
 - Additional Reading/Tutorials/Books/Blogs
+
+### Additional Reading/Tutorials/Books/Blogs
+
+- [Django for Beginners by William S. Vincent](https://djangoforbeginners.com/) – Useful guide for Django development.
+- [Real Python](https://realpython.com/) – In-depth tutorials on Django, Python, and web development.
+- [CSS Tricks](https://css-tricks.com/) – Advanced CSS techniques and styling tips.
+- [Digital Ocean Tutorials](https://www.digitalocean.com/community/tutorials) – Helpful cloud deployment guides.
 
 - Acknowledgements
