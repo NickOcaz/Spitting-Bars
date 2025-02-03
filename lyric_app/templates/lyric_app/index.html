@@ -18,7 +18,11 @@
           <p class="card-text">
             Start crafting your own lyrics and express your creativity.
           </p>
+          {% if user.is_authenticated %}
           <a href="{% url 'lyric_create' %}" class="btn">Create Your Own Raps</a>
+        {% else %}
+        <a href="{% url 'account_signup' %}" class="btn">Log in or Register</a>
+        {% endif %}
         </div>
       </div>
     </div>
