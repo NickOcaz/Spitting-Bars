@@ -29,17 +29,27 @@ def lyric_detail(request, pk):
 
     return render(request, 'lyric_app/lyric_detail.html', {'lyric': lyric})
 
+@login_required
 def lyric_create(request):
-    lyricform = LyricForm()
     if request.method == 'POST':
         lyricform = LyricForm(request.POST)
         if lyricform.is_valid():
-            lyric = lyricform.save(commit=False)
-            lyric.artist = request.user
-            lyric.save()
-            messages.success(request, 'Lyric created successfully')
-            return redirect('home')
-    lyricform = LyricForm()
+            try:
+                lyric = lyricform.save(commit=False)
+                lyric.artist = request.user  # Set the artist before saving
+                # Ensure admin_accept is set as an integer
+                lyric.admin_accept = 1 if lyricform.cleaned_data.get('admin_accept', False) else 0
+                lyric.save()
+                messages.success(request, 'Lyric created successfully')
+                return redirect('home')
+            except Exception as e:
+                print(f"Error saving lyric: {e}")
+                messages.error(request, 'There was an error saving your lyric. Please try again.')
+        else:
+            print(f"Form errors: {lyricform.errors}")
+            messages.error(request, 'There was an error with your submission. Please correct the errors and try again.')
+    else:
+        lyricform = LyricForm()
     
     return render(request, 'lyric_app/lyric_create.html', {'lyricform': lyricform})
 
