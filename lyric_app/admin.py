@@ -14,7 +14,7 @@ class LyricAdmin(admin.ModelAdmin):
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
-        return qs.filter(status=0)  # Assuming 'published' corresponds to 1
+        return qs.filter(status=1)  # Assuming 'published' corresponds to 1
 
     def publish_lyrics(self, request, queryset):
         queryset.update(status=1)  # Assuming 'published' corresponds to 1
