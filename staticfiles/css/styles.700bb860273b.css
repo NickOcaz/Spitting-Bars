@@ -5,7 +5,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Poppins", sans-serif;
-  background: url("/static/images/Spit.png") no-repeat center center fixed;
+  background: url("/static/images/Spit.58c048b23b4c.png") no-repeat center center fixed;
   background-color: rgba(0, 0, 0, 0.479);
   background-blend-mode: overlay;
   background-size: cover;
