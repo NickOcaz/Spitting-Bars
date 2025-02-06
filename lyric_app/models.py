@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 STATUS = ((0, "Personal"), (1, "Publish Me (needs admin approval)"))
 STYLE = (("Rap", "Rap"), ("Song", "Song"), ("Poem", "Poem"), ("Other", "Other"))
+ADMIN_ACCEPT = ((0, "Private"), (1, "Awaiting Approval"), (2, "Published"))
 
 
 class Genre(models.Model):
@@ -18,9 +19,7 @@ class Lyric(models.Model):
     lyric = models.TextField()
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=0)
-    #is_protected = models.BooleanField(default=False)
-    #is_approved = models.BooleanField(default=False)
-    #admin_accept = models.BooleanField(default=False)
+    admin_accept = models.IntegerField(choices=ADMIN_ACCEPT, default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

@@ -2,6 +2,7 @@ from .models import Lyric
 from django import forms
 
 class LyricForm(forms.ModelForm):
+    
     class Meta:
         model = Lyric
         fields = ['title', 'lyric', 'genre', 'status']
