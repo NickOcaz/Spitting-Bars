@@ -25,6 +25,9 @@ body {
   color: #fff !important;
 }
 
+.navbar-toggler {
+ color: #fff !important; 
+}
 .navbar-nav .nav-link {
   color: #fff !important;
   transition: 0.3s ease-in-out;
@@ -80,7 +83,7 @@ a {
   font-size: 1.2rem;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgb(0, 0, 0);
-  background-color: rgba(228, 3, 3, 0.74);
+  background-color: rgba(0, 0, 0, 0.74);
   width: fit-content;
   padding: 1rem;
   margin: 0.5rem auto;
@@ -100,6 +103,13 @@ a {
   box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.2);
   width: auto;
   text-align: center;
+}
+
+.page-link {
+  background-color: #ffc107;
+  color: #222;
+  font-weight: bold;
+  margin: 1rem;
 }
 
 .btn:hover {
